@@ -13,7 +13,7 @@ export default function Map() {
   const map = useRef(null);
   const tokyo = { lng: 139.753, lat: 35.6844 };
   const zoom = 15;
-  maptilersdk.config.apiKey = "0RIdnIp4oGo6HhkfVfWj";
+  maptilersdk.config.apiKey = import.meta.env.VITE_MAPTILER_API_KEY;
 
   useEffect(() => {
     if (map.current) return; // stops map from intializing more than once
@@ -36,7 +36,7 @@ export default function Map() {
 
     // Initialize and add the GeocodingControl (search bar)
     const geocodingControl = new GeocodingControl({
-      apiKey: "0RIdnIp4oGo6HhkfVfWj",
+      apiKey: import.meta.env.VITE_MAPTILER_API_KEY,
       maplibregl: maplibregl,
       flyTo: true, // Centers map on search result
     });
