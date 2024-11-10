@@ -16,7 +16,7 @@ const Profile = () => {
   const handleLogout = () => {
     // Clear local storage and navigate back to the login page
     localStorage.clear();
-    navigate("/");
+    navigate("/foundhere/");
   };
 
   return (

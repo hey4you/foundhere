@@ -11,14 +11,14 @@ export default function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="foundhere/" element={<Login />} />
         <Route path="/map" element={<Map />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/liked" element={<Liked />} />
       </Routes>
 
       {/* Conditionally render BottomNavigation based on current route */}
-      {location.pathname !== "/" && <BottomNavigationBar />}
+      {location.pathname !== "/foundhere/" && <BottomNavigationBar />}
     </>
   );
 }

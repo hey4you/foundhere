@@ -6,7 +6,6 @@ import maplibregl from "maplibre-gl";
 import { GeocodingControl } from "@maptiler/geocoding-control/maplibregl";
 import "@maptiler/geocoding-control/style.css";
 import "maplibre-gl/dist/maplibre-gl.css";
-import Profile from "./Profile";
 
 export default function Map() {
   const mapContainer = useRef(null);
@@ -27,11 +26,27 @@ export default function Map() {
 
     new maptilersdk.Marker({ color: "#2CDA9D" })
       .setLngLat([139.7525, 35.6846])
-      .setPopup(new maptilersdk.Popup().setHTML(<Profile />))
+      .setPopup(new maptilersdk.Popup().setHTML("Traditional Tea Sets Anzuri"))
       .addTo(map.current);
 
     new maptilersdk.Marker({ color: "#2CDA9D" })
       .setLngLat([139.74, 35.69])
+      .setPopup(new maptilersdk.Popup().setHTML("Tokyo Souvenir Mimoto"))
+      .addTo(map.current);
+
+    new maptilersdk.Marker({ color: "#2CDA9D" })
+      .setLngLat([139.71, 35.71])
+      .setPopup(new maptilersdk.Popup().setHTML("SHIBUYA Souvenirs"))
+      .addTo(map.current);
+
+    new maptilersdk.Marker({ color: "#2CDA9D" })
+      .setLngLat([139.74, 35.68])
+      .setPopup(new maptilersdk.Popup().setHTML("KYOTOTO"))
+      .addTo(map.current);
+
+    new maptilersdk.Marker({ color: "#2CDA9D" })
+      .setLngLat([8.432436222, 47.14508040683401])
+      .setPopup(new maptilersdk.Popup().setHTML("Cool HSLU store"))
       .addTo(map.current);
 
     // Initialize and add the GeocodingControl (search bar)
