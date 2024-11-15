@@ -31,7 +31,9 @@ export default function Map() {
 
     new maptilersdk.Marker({ color: "#2CDA9D" })
       .setLngLat([139.74, 35.69])
-      .setPopup(new maptilersdk.Popup().setHTML("Tokyo Souvenir Mimoto"))
+      .setPopup(
+        new maptilersdk.Popup().setHTML("Approved: Tokyo Souvenir Mimoto")
+      )
       .addTo(map.current);
 
     new maptilersdk.Marker({ color: "#2CDA9D" })
@@ -39,7 +41,7 @@ export default function Map() {
       .setPopup(new maptilersdk.Popup().setHTML("SHIBUYA Souvenirs"))
       .addTo(map.current);
 
-    new maptilersdk.Marker({ color: "#2CDA9D" })
+    new maptilersdk.Marker({ color: "#2C4443" })
       .setLngLat([139.74, 35.68])
       .setPopup(new maptilersdk.Popup().setHTML("KYOTOTO"))
       .addTo(map.current);
@@ -54,6 +56,7 @@ export default function Map() {
       apiKey: import.meta.env.VITE_MAPTILER_API_KEY,
       maplibregl: maplibregl,
       flyTo: true, // Centers map on search result
+      color: "red",
     });
     map.current.addControl(geocodingControl, "top-left");
   }, [tokyo.lng, tokyo.lat, zoom]);

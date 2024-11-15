@@ -31,7 +31,11 @@ const BottomNavigationBar = () => {
       }}
       elevation={3}
     >
-      <BottomNavigation value={activeTab} onChange={handleTabChange}>
+      <BottomNavigation
+        value={activeTab}
+        onChange={handleTabChange}
+        sx={{ bgcolor: "#374151", height: "75px" }}
+      >
         <BottomNavigationAction
           label="Map"
           value="map"
@@ -40,6 +44,12 @@ const BottomNavigationBar = () => {
               <FaMapMarkedAlt />
             </SvgIcon>
           }
+          sx={{
+            color: activeTab === "map" ? "#000000" : "#9ca3af", // Green for active, Gray for inactive
+            "& .Mui-selected": {
+              color: "#000000",
+            },
+          }}
         />
         <BottomNavigationAction
           label="Liked"
@@ -49,6 +59,12 @@ const BottomNavigationBar = () => {
               <FaHeart />
             </SvgIcon>
           }
+          sx={{
+            color: activeTab === "liked" ? "#000000" : "#9ca3af", // Green for active, Gray for inactive
+            "& .Mui-selected": {
+              color: "#000000",
+            },
+          }}
         />
         <BottomNavigationAction
           label="Profile"
@@ -58,6 +74,12 @@ const BottomNavigationBar = () => {
               <FaUser />
             </SvgIcon>
           }
+          sx={{
+            color: activeTab === "profile" ? "#000000" : "#9ca3af", // Green for active, Gray for inactive
+            "& .Mui-selected": {
+              color: "#000000",
+            },
+          }}
         />
       </BottomNavigation>
     </Paper>

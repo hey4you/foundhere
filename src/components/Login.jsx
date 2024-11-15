@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TextField, Button, Box, Typography } from "@mui/material";
-import logo from "../assets/logo.png";
+import logo from "../assets/logostyled.png";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -38,7 +38,7 @@ export default function Login() {
       <img
         src={logo}
         alt="Logo"
-        style={{ width: "150px", marginBottom: "20px", borderRadius: "8%" }}
+        style={{ width: "275px", marginBottom: "20px", borderRadius: "8%" }}
       />
 
       <Typography variant="h6" gutterBottom>
@@ -78,7 +78,7 @@ export default function Login() {
           type="submit"
           variant="contained"
           fullWidth
-          sx={{ mt: 2, bgcolor: "#4BB3FD" }}
+          sx={{ mt: 2, bgcolor: "#778DA9", color: "white" }}
         >
           Login
         </Button>
