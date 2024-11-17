@@ -38,6 +38,10 @@ const Liked = () => {
       location: "53 Akihabara, Tokyo",
       description: "Beautiful traditional kimonos",
       icon: <DryCleaningIcon />,
+      image:
+        "https://lh5.googleusercontent.com/p/AF1QipOZ44YegxvN8SVFkN06gamqPNzFPmEu2as4HpA=w171-h171-n-k-no",
+      image2:
+        "https://lh5.googleusercontent.com/p/AF1QipOZ44YegxvN8SVFkN06gamqPNzFPmEu2as4HpA=w171-h171-n-k-no",
     },
   ];
 

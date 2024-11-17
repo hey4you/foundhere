@@ -26,7 +26,9 @@ export default function Map() {
 
     new maptilersdk.Marker({ color: "#2CDA9D" })
       .setLngLat([139.7525, 35.6846])
-      .setPopup(new maptilersdk.Popup().setHTML("Traditional Tea Sets Anzuri"))
+      .setPopup(
+        new maptilersdk.Popup().setHTML("Approved: Traditional Tea Sets Anzuri")
+      )
       .addTo(map.current);
 
     new maptilersdk.Marker({ color: "#2CDA9D" })
@@ -36,14 +38,14 @@ export default function Map() {
       )
       .addTo(map.current);
 
-    new maptilersdk.Marker({ color: "#2CDA9D" })
+    new maptilersdk.Marker({ color: "#2C4443" })
       .setLngLat([139.71, 35.71])
-      .setPopup(new maptilersdk.Popup().setHTML("SHIBUYA Souvenirs"))
+      .setPopup(new maptilersdk.Popup().setHTML("Community: SHIBUYA Souvenirs"))
       .addTo(map.current);
 
     new maptilersdk.Marker({ color: "#2C4443" })
       .setLngLat([139.74, 35.68])
-      .setPopup(new maptilersdk.Popup().setHTML("KYOTOTO"))
+      .setPopup(new maptilersdk.Popup().setHTML("Community: KYOTOTO"))
       .addTo(map.current);
 
     new maptilersdk.Marker({ color: "#2CDA9D" })

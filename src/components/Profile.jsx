@@ -7,6 +7,7 @@ import {
   Divider,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -40,30 +41,43 @@ const Profile = () => {
       <Divider sx={{ my: 3 }} />
 
       <Box display="flex" flexDirection="column" gap={2} alignItems="center">
-        <Button variant="contained" fullWidth sx={{ bgcolor: "#2CDA9D" }}>
+        <Button
+          variant="contained"
+          fullWidth
+          sx={{ bgcolor: "#778DA9", borderRadius: "20px" }}
+        >
           Edit Profile
         </Button>
         <Button
           variant="outlined"
           fullWidth
-          sx={{ color: "#22333B", borderColor: "#22333B" }}
+          sx={{
+            color: "#778DA9",
+            borderColor: "#778DA9",
+            borderRadius: "20px",
+          }}
         >
           Account Settings
         </Button>
         <Button
           variant="outlined"
           fullWidth
-          sx={{ color: "#22333B", borderColor: "#22333B" }}
+          sx={{
+            color: "#778DA9",
+            borderColor: "#778DA9",
+            borderRadius: "20px",
+          }}
         >
           My Liked Souvenirs
         </Button>
         <Button
           variant="contained"
-          sx={{ bgcolor: "#FF8A5B" }}
+          sx={{ bgcolor: "#FF8A5B", borderRadius: "20px" }}
           fullWidth
           onClick={handleLogout}
         >
           Logout
+          <LogoutIcon />
         </Button>
       </Box>
     </Container>

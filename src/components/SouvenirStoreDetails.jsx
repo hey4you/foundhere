@@ -4,12 +4,18 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import PropTypes from "prop-types";
+import { Carousel } from "react-responsive-carousel"; // Carousel example (install via npm if needed)
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // Carousel styles
 
 const SouvenirStoreDetails = ({ store, onBack }) => {
   return (
     <>
       {/* Back Button */}
-      <Fab variant="extended" onClick={onBack} sx={{ bgcolor: "#777AA9" }}>
+      <Fab
+        variant="extended"
+        onClick={onBack}
+        sx={{ bgcolor: "#777AA9", color: "#ffffff" }}
+      >
         <ArrowBackIcon sx={{ mr: 1 }} />
         Back to List
       </Fab>
@@ -40,18 +46,40 @@ const SouvenirStoreDetails = ({ store, onBack }) => {
             sx={{
               fontWeight: "bold",
               color: "#333",
-              textAlign: "center",
+              textAlign: "left",
               mb: 2,
             }}
           >
             {store.name}
           </Typography>
 
+          {/* Store Images */}
+          {store.images && store.images.length > 0 && (
+            <Box sx={{ mb: 3 }}>
+              <Carousel showThumbs={false} infiniteLoop autoPlay>
+                {store.images.map((image, index) => (
+                  <div key={index}>
+                    <img
+                      src={image}
+                      alt={`Store Image ${index + 1}`}
+                      style={{
+                        borderRadius: "8px",
+                        maxHeight: "300px",
+                        objectFit: "cover",
+                        width: "100%",
+                      }}
+                    />
+                  </div>
+                ))}
+              </Carousel>
+            </Box>
+          )}
+
           {/* Store Location, Phone, and Hours */}
-          <Box sx={{ textAlign: "center", mb: 3 }}>
+          <Box sx={{ textAlign: "left", mb: 3 }}>
             <Typography
               variant="subtitle1"
-              sx={{ display: "flex", justifyContent: "center", mb: 1 }}
+              sx={{ display: "flex", justifyContent: "left", mb: 1 }}
             >
               <LocationOnIcon sx={{ mr: 1, color: "#2196f3" }} />{" "}
               {store.location}
@@ -59,7 +87,7 @@ const SouvenirStoreDetails = ({ store, onBack }) => {
             {store.phone && (
               <Typography
                 variant="subtitle1"
-                sx={{ display: "flex", justifyContent: "center", mb: 1 }}
+                sx={{ display: "flex", justifyContent: "left", mb: 1 }}
               >
                 <PhoneIcon sx={{ mr: 1, color: "#2196f3" }} /> {store.phone}
               </Typography>
@@ -67,7 +95,7 @@ const SouvenirStoreDetails = ({ store, onBack }) => {
             {store.hours && (
               <Typography
                 variant="subtitle1"
-                sx={{ display: "flex", justifyContent: "center" }}
+                sx={{ display: "flex", justifyContent: "left" }}
               >
                 <AccessTimeIcon sx={{ mr: 1, color: "#2196f3" }} />{" "}
                 {store.hours}
@@ -83,7 +111,7 @@ const SouvenirStoreDetails = ({ store, onBack }) => {
                 fontStyle: "italic",
                 color: "#666",
                 mb: 4,
-                textAlign: "center",
+                textAlign: "left",
               }}
             >
               {store.description}
